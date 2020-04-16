@@ -49,13 +49,12 @@
 
       x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
+      var map = document.querySelector('#map');
+      var link = `https://www.google.com/maps/d/u/0/embed?mid=1g4udbZP1VBIb6aiVM4zCvHKYp7bgrZsq&ll=${position.coords.latitude}%2C${position.coords.longitude}`;
+      x.innerHTML = "link: " + link;
+      // map.setAttribute("src", link);
 
     }
-    // function showPosition(position)
-    //  {
-    //  x.innerHTML="Latitude: " + position.coords.latitude + 
-    //  "<br>Longitude: " + position.coords.longitude;  
-    //  }
     function showError(error) {
       switch (error.code) {
         case error.PERMISSION_DENIED:
@@ -79,7 +78,7 @@
 
   <div>
     <center>
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1g4udbZP1VBIb6aiVM4zCvHKYp7bgrZsq" width="640"
+      <iframe id="map" src="https://www.google.com/maps/d/u/0/embed?mid=1g4udbZP1VBIb6aiVM4zCvHKYp7bgrZsq" width="640"
         height="480"></iframe>
     </center>
   </div>
