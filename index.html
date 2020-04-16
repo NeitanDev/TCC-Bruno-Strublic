@@ -45,14 +45,9 @@
     function showPosition(position) {
       lat = position.coords.latitude;
       lon = position.coords.longitude;
-      latlon = new google.maps.LatLng(lat, lon);
-
-      x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
       var map = document.querySelector('#map');
-      var link = `https://www.google.com/maps/d/u/0/embed?mid=1g4udbZP1VBIb6aiVM4zCvHKYp7bgrZsq&ll=${position.coords.latitude}%2C${position.coords.longitude}`;
-      x.innerHTML = "link: " + link;
-      // map.setAttribute("src", link);
+      var link = `https://www.google.com/maps/d/u/0/embed?mid=1g4udbZP1VBIb6aiVM4zCvHKYp7bgrZsq&ll=${lat}}%2C${lon}&z=17`;
+      map.setAttribute("src", link);
 
     }
     function showError(error) {
